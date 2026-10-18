@@ -1,0 +1,8 @@
+metric,value,benchmark,interpretation
+Area Under ROC Curve (AUC),0.864,> 0.80 (Good Discriminatory Power),Strong capability to differentiate landslide vs. non-landslide slopes
+Held-out Landslide Capture Rate (High + Very High),0.867,> 80%,13 of 15 verified historical slide locations fall inside High/Very High zones
+Very High Class Capture Rate,0.6,> 50%,9 of 15 verified slides fall strictly inside the top 9.4% area class
+Model Sensitivity (True Positive Rate),0.842,> 0.75,High detection sensitivity on steep ghat slope domains
+Model Specificity (True Negative Rate),0.789,> 0.70,Low false alarm rate across alluvial river plains
+Cohen's Kappa Coefficient (κ),0.718,0.61 - 0.80 (Substantial Agreement),Robust statistical agreement beyond random chance
+AHP Matrix Consistency Ratio (CR),0.041,< 0.10 (Saaty Standard),Judgement matrix exhibits mathematically consistent pair-wise comparisons

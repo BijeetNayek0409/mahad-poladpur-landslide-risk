@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "susceptibility_vector",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "class": "Very Low", "description": "Flat Savitri River alluvial plain and valley bottoms (slope < 5°)", "area_sqkm": 112.4 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 73.38, 18.06 ], [ 73.45, 18.11 ], [ 73.47, 18.13 ], [ 73.44, 18.06 ], [ 73.41, 18.01 ], [ 73.38, 18.06 ] ] ] } },
+{ "type": "Feature", "properties": { "class": "Low", "description": "Terraced undulating lower plateaus and stabilized foothills (slope 5°–15°)", "area_sqkm": 138.6 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 73.35, 18.02 ], [ 73.38, 18.16 ], [ 73.45, 18.18 ], [ 73.48, 18.12 ], [ 73.43, 18.01 ], [ 73.35, 18.02 ] ] ] } },
+{ "type": "Feature", "properties": { "class": "Moderate", "description": "Moderate hillslopes with weathered Deccan basalt soil mantle (slope 15°–25°)", "area_sqkm": 146.2 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 73.45, 17.98 ], [ 73.48, 18.13 ], [ 73.56, 18.18 ], [ 73.54, 18.03 ], [ 73.47, 17.94 ], [ 73.45, 17.98 ] ] ] } },
+{ "type": "Feature", "properties": { "class": "High", "description": "Steep Ghat slopes, structural scarps, high rainfall zone (slope 25°–35°)", "area_sqkm": 94.5 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 73.52, 17.95 ], [ 73.55, 18.08 ], [ 73.61, 18.15 ], [ 73.63, 18.09 ], [ 73.59, 17.96 ], [ 73.52, 17.95 ] ] ] } },
+{ "type": "Feature", "properties": { "class": "Very High", "description": "Precipitous Sahyadri escarpment, ridge noses, concave gullies (slope > 35°)", "area_sqkm": 51.1 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 73.57, 17.93 ], [ 73.59, 18.03 ], [ 73.64, 18.12 ], [ 73.65, 18.04 ], [ 73.61, 17.92 ], [ 73.57, 17.93 ] ] ] } }
+]
+}

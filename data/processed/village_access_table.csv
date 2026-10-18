@@ -1,0 +1,15 @@
+village_name,normal_route_km,disrupted_route_km,detour_ratio,alternate_routes,access_risk_class,notes
+Mahad,0.0,0.0,1.0,4,Low,Taluka Headquarters & SDH Hospital; base emergency response station
+Poladpur,16.3,16.3,1.0,2,Low,Sub-district administrative node; gateway to Ambenali Ghat
+Birwadi,6.8,6.8,1.0,2,Low,MIDC industrial township; robust dual access via NH-66 and bypass
+Dasgaon,11.2,11.2,1.0,2,Low,Northern corridor node on NH-66; stable valley alignment
+Kemburli,6.8,6.8,1.0,1,Moderate,Mid-corridor highway junction; culvert overtopping risk in flash floods
+Shedav,15.3,15.3,1.0,1,Low,Western agricultural periphery; unhindered local access
+Sape,19.5,19.5,1.0,1,Moderate,South of Poladpur; accessible via main arterial unless culvert choked
+Kapade,21.7,39.8,1.83,1,High,Ridge settlement; primary spur high-exposure; significant detour via loop
+Nangalwadi,17.2,42.5,2.47,1,High,Upper valley settlement; single narrow track subject to recurring debris wash
+Taliye,14.8,0.0,999.0,0,Isolated,Site of 2021 disaster; primary and ridge routes both traverse Very High zones; complete isolation under blockage
+Parali,19.0,0.0,999.0,0,Isolated,Cul-de-sac beyond Taliye; completely cutoff whenever Taliye spur fails
+Kevnale,16.4,0.0,999.0,0,Isolated,Foothills of Varandha range; steep single cul-de-sac path directly on scarp
+Chobare,20.9,46.2,2.21,1,High,Adjacent to Ambenali Ghat section 4; dependent on PWD clearance teams
+Waked,19.2,34.6,1.8,1,Moderate,Foothills settlement east of Poladpur; alternative track available via riverbed road

@@ -1,0 +1,7 @@
+factor,weight,rank,consistency_ratio,lambda_max,ci,cr,description,notes
+Slope Gradient,0.342,1,0.041,6.258,0.0516,0.0416,Derived from SRTM 30m DEM; primary driver of gravitational shear stress,Weights > 30° assigned maximum scale rating (9/9)
+Monsoon Rainfall Intensity,0.264,2,0.041,6.258,0.0516,0.0416,IMD 0.25° cumulative monsoon & peak 72h precipitation records,Trigger factor; July 2021 Taliye recorded 538mm/24h
+Geology / Lithology & Soil,0.161,3,0.041,6.258,0.0516,0.0416,Deccan Traps compound basalt lava flows overlain by highly weathered laterite,Laterite-saprolite interface acts as preferential slip plane
+Drainage Density,0.108,4,0.041,6.258,0.0516,0.0416,Savitri basin dendritic stream network density per km²,High drainage density accelerates pore pressure saturation and scour
+Land Use / Land Cover (LULC),0.075,5,0.041,6.258,0.0516,0.0416,"Bhuvan 2020 LULC: dense forest, degraded scrub, terrace agriculture, barren rock",Root cohesion provides structural slope anchorage on forested scarps
+Plan & Profile Curvature,0.05,6,0.041,6.258,0.0516,0.0416,Terrain concavity/convexity index from DEM second derivatives,Concave convergent hollows channel debris flows during extreme storms
