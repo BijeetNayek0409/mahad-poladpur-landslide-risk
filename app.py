@@ -57,9 +57,18 @@ st.markdown(
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-    html, body, [class*="st-"] {{
+    html, body, .stApp {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }}
+    }
+
+    /* Protect Streamlit Material Icons from ligature text bleed */
+    [data-testid*="stIcon"],
+    [data-testid*="Icon"],
+    [data-testid="stSidebarCollapseButton"] span,
+    .material-symbols-rounded,
+    .material-symbols-outlined {
+        font-family: "Material Symbols Rounded", "Material Symbols Outlined" !important;
+    }
 
     /* ── Main Background ────────────────────────────────────────────────── */
     .stApp {{
