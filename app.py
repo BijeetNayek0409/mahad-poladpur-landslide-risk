@@ -52,6 +52,43 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# ── Interactive Theme Toggle (Sidebar) ───────────────────────────────────────
+theme_mode = st.sidebar.radio("🌓 Theme", ["Dark Mode", "Light Mode"], horizontal=True, index=0)
+is_dark = (theme_mode == "Dark Mode")
+
+if is_dark:
+    bg_app = "#0e1117"
+    text_primary = "#e2e8f0"
+    text_muted = "#94a3b8"
+    sidebar_bg = "linear-gradient(180deg, #0b0f19 0%, #151d30 100%)"
+    sidebar_border = "#1e293b"
+    card_bg = "linear-gradient(135deg, #1e293b 0%, #111827 100%)"
+    card_border = "#334155"
+    info_box_bg = "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)"
+    factor_card_bg = "linear-gradient(135deg, #1e293b 0%, #162032 100%)"
+    legend_bg = "#111827"
+    wf_bg = "#162032"
+    wf_border = "#23334d"
+    wf_text = "#f1f5f9"
+    tab_active_bg = "#1e293b"
+    plotly_font = "#cbd5e1"
+else:
+    bg_app = "#f8fafc"
+    text_primary = "#0f172a"
+    text_muted = "#475569"
+    sidebar_bg = "linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%)"
+    sidebar_border = "#cbd5e1"
+    card_bg = "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)"
+    card_border = "#cbd5e1"
+    info_box_bg = "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)"
+    factor_card_bg = "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)"
+    legend_bg = "#ffffff"
+    wf_bg = "#ffffff"
+    wf_border = "#cbd5e1"
+    wf_text = "#0f172a"
+    tab_active_bg = "#e2e8f0"
+    plotly_font = "#0f172a"
+
 st.markdown(
     f"""
     <style>
@@ -63,44 +100,44 @@ st.markdown(
 
     /* ── Main Background ────────────────────────────────────────────────── */
     .stApp {{
-        background-color: {PALETTE['bg_dark']};
-        color: {PALETTE['text']};
+        background-color: {bg_app};
+        color: {text_primary};
     }}
 
     /* ── Sidebar Styling ────────────────────────────────────────────────── */
     section[data-testid="stSidebar"] {{
-        background: linear-gradient(180deg, #0b0f19 0%, #151d30 100%);
-        border-right: 1px solid #1e293b;
+        background: {sidebar_bg};
+        border-right: 1px solid {sidebar_border};
     }}
     section[data-testid="stSidebar"] .stMarkdown h1 {{
-        color: #38bdf8;
+        color: #0284c7;
         font-size: 1.35rem;
         margin-bottom: 0.2rem;
     }}
 
     /* ── Metric KPI Cards ───────────────────────────────────────────────── */
     div[data-testid="metric-container"] {{
-        background: linear-gradient(135deg, #1e293b 0%, #111827 100%);
-        border: 1px solid #334155;
+        background: {card_bg};
+        border: 1px solid {card_border};
         border-radius: 10px;
         padding: 14px 18px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
     }}
     div[data-testid="stMetricValue"] {{
         font-size: 1.6rem !important;
         font-weight: 700;
-        color: #38bdf8 !important;
+        color: #0284c7 !important;
     }}
     div[data-testid="stMetricLabel"] {{
         font-size: 0.85rem !important;
-        color: #94a3b8 !important;
+        color: {text_muted} !important;
         font-weight: 500;
     }}
 
     /* ── Info Box ───────────────────────────────────────────────────────── */
     .info-box {{
-        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-        border: 1px solid #334155;
+        background: {info_box_bg};
+        border: 1px solid {card_border};
         border-left: 4px solid {PALETTE['primary']};
         border-radius: 10px;
         padding: 16px 20px;
@@ -108,21 +145,21 @@ st.markdown(
     }}
     .info-box h4 {{
         margin: 0 0 6px 0;
-        color: #38bdf8;
+        color: #0284c7;
         font-size: 1rem;
         font-weight: 600;
     }}
     .info-box p {{
         margin: 0;
-        color: #cbd5e1;
+        color: {text_muted};
         font-size: 0.88rem;
         line-height: 1.55;
     }}
 
     /* ── Factor Card ────────────────────────────────────────────────────── */
     .factor-card {{
-        background: linear-gradient(135deg, #1e293b 0%, #162032 100%);
-        border: 1px solid #334155;
+        background: {factor_card_bg};
+        border: 1px solid {card_border};
         border-radius: 10px;
         padding: 16px 18px;
         margin: 6px 0;
@@ -130,26 +167,26 @@ st.markdown(
         transition: border-color 0.2s ease, transform 0.15s ease;
     }}
     .factor-card:hover {{
-        border-color: #38bdf8;
+        border-color: #0284c7;
         transform: translateY(-2px);
     }}
     .factor-card h5 {{
         margin: 0 0 6px 0;
-        color: #2dd4bf;
+        color: #0d9488;
         font-size: 0.95rem;
         font-weight: 600;
     }}
     .factor-card p {{
         margin: 0;
-        color: #94a3b8;
+        color: {text_muted};
         font-size: 0.82rem;
         line-height: 1.45;
     }}
 
     /* ── Legend Block ───────────────────────────────────────────────────── */
     .legend-block {{
-        background: #111827;
-        border: 1px solid #334155;
+        background: {legend_bg};
+        border: 1px solid {card_border};
         border-radius: 10px;
         padding: 14px 18px;
         margin-bottom: 12px;
@@ -183,10 +220,10 @@ st.markdown(
         align-items: flex-start;
         gap: 14px;
         margin: 10px 0;
-        background: #162032;
+        background: {wf_bg};
         padding: 12px 16px;
         border-radius: 8px;
-        border: 1px solid #23334d;
+        border: 1px solid {wf_border};
     }}
     .wf-num {{
         flex-shrink: 0;
@@ -202,19 +239,19 @@ st.markdown(
         font-size: 0.85rem;
     }}
     .wf-body strong {{
-        color: #f1f5f9;
+        color: {wf_text};
         font-size: 0.92rem;
     }}
     .wf-body span {{
-        color: #94a3b8;
+        color: {text_muted};
         font-size: 0.82rem;
         line-height: 1.4;
     }}
 
     /* ── Scenario Alert Card ────────────────────────────────────────────── */
     .scenario-card {{
-        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-        border: 1px solid #334155;
+        background: {info_box_bg};
+        border: 1px solid {card_border};
         border-radius: 10px;
         padding: 14px 18px;
         margin-top: 10px;
@@ -231,12 +268,12 @@ st.markdown(
         padding: 8px 18px;
         font-weight: 600;
         font-size: 0.92rem;
-        color: #94a3b8;
+        color: {text_muted};
     }}
     .stTabs [aria-selected="true"] {{
-        background-color: #1e293b !important;
-        color: #38bdf8 !important;
-        border-bottom: 2px solid #38bdf8 !important;
+        background-color: {tab_active_bg} !important;
+        color: #0284c7 !important;
+        border-bottom: 2px solid #0284c7 !important;
     }}
 
     footer {{visibility: hidden;}}
@@ -450,7 +487,7 @@ with tabs[1]:
             st_folium(m2, height=480, use_container_width=True)
 
     with col_chart:
-        st.markdown(f'<div class="legend-block">{susceptibility_legend_html()}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="legend-block">{susceptibility_legend_html(is_dark=is_dark)}</div>', unsafe_allow_html=True)
 
         # Plotly Susceptibility Distribution Donut Chart
         if susc_gdf is not None:
@@ -467,7 +504,7 @@ with tabs[1]:
             fig_donut.update_layout(
                 paper_bgcolor="rgba(0,0,0,0)",
                 plot_bgcolor="rgba(0,0,0,0)",
-                font=dict(color="#cbd5e1", size=12),
+                font=dict(color=plotly_font, size=12),
                 margin=dict(l=10, r=10, t=35, b=10),
                 height=250,
                 legend=dict(orientation="h", yanchor="bottom", y=-0.25, xanchor="center", x=0.5),
@@ -510,7 +547,7 @@ with tabs[1]:
             fig_ahp.update_layout(
                 paper_bgcolor="rgba(0,0,0,0)",
                 plot_bgcolor="rgba(0,0,0,0)",
-                font=dict(color="#cbd5e1", size=12),
+                font=dict(color=plotly_font, size=12),
                 margin=dict(l=10, r=20, t=35, b=20),
                 height=270,
                 coloraxis_showscale=False,
@@ -607,12 +644,12 @@ with tabs[2]:
             st_folium(m3, height=480, use_container_width=True)
 
     with col_info3:
-        st.markdown(f'<div class="legend-block">{access_risk_legend_html()}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="legend-block">{access_risk_legend_html(is_dark=is_dark)}</div>', unsafe_allow_html=True)
         st.markdown(
             f"""
             <div class="scenario-card">
-                <h5 style="color:#38bdf8;margin:0 0 4px 0;">Current Simulation: {scenario}</h5>
-                <p style="color:#cbd5e1;font-size:0.84rem;line-height:1.45;margin:0;">
+                <h5 style="color:#0284c7;margin:0 0 4px 0;">Current Simulation: {scenario}</h5>
+                <p style="color:{text_muted};font-size:0.84rem;line-height:1.45;margin:0;">
                 {scenario_note}
                 </p>
             </div>
@@ -642,7 +679,7 @@ with tabs[2]:
             fig_risk.update_layout(
                 paper_bgcolor="rgba(0,0,0,0)",
                 plot_bgcolor="rgba(0,0,0,0)",
-                font=dict(color="#cbd5e1", size=11),
+                font=dict(color=plotly_font, size=11),
                 margin=dict(l=10, r=10, t=30, b=10),
                 height=200,
                 showlegend=False,
@@ -801,7 +838,7 @@ $$
             yaxis_title="True Positive Rate (Sensitivity)",
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
-            font=dict(color="#cbd5e1", size=11),
+            font=dict(color=plotly_font, size=11),
             margin=dict(l=10, r=10, t=35, b=20),
             height=280,
             legend=dict(orientation="h", yanchor="bottom", y=-0.3, xanchor="center", x=0.5),

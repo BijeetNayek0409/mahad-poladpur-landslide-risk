@@ -273,31 +273,36 @@ def add_village_points(
     return m
 
 
-def susceptibility_legend_html() -> str:
+def susceptibility_legend_html(is_dark: bool = True) -> str:
     """Return HTML for a susceptibility class colour legend."""
+    text_color = "#e2e8f0" if is_dark else "#0f172a"
+    border_color = "#475569" if is_dark else "#cbd5e1"
     rows = ""
     for cls, colour in SUSCEPTIBILITY_COLOURS.items():
         rows += (
             f'<div style="display:flex;align-items:center;gap:8px;margin:3px 0;">'
             f'<span style="display:inline-block;width:18px;height:14px;'
-            f'background:{colour};border:1px solid #475569;border-radius:3px;"></span>'
-            f'<span style="font-size:0.82rem;color:#e2e8f0;">{cls}</span></div>'
+            f'background:{colour};border:1px solid {border_color};border-radius:3px;"></span>'
+            f'<span style="font-size:0.82rem;color:{text_color};">{cls}</span></div>'
         )
     return f'<div style="padding:4px 0;"><strong style="color:#0ea5e9;font-size:0.88rem;">Susceptibility Class</strong>{rows}</div>'
 
 
-def access_risk_legend_html() -> str:
+def access_risk_legend_html(is_dark: bool = True) -> str:
     """Return HTML for an access-risk class colour legend."""
+    text_color = "#e2e8f0" if is_dark else "#0f172a"
+    border_color = "#475569" if is_dark else "#cbd5e1"
+    divider_color = "#334155" if is_dark else "#e2e8f0"
     rows = ""
     for cls, colour in ACCESS_RISK_COLOURS.items():
         rows += (
             f'<div style="display:flex;align-items:center;gap:8px;margin:3px 0;">'
             f'<span style="display:inline-block;width:18px;height:14px;'
-            f'background:{colour};border:1px solid #475569;border-radius:3px;"></span>'
-            f'<span style="font-size:0.82rem;color:#e2e8f0;">{cls}</span></div>'
+            f'background:{colour};border:1px solid {border_color};border-radius:3px;"></span>'
+            f'<span style="font-size:0.82rem;color:{text_color};">{cls}</span></div>'
         )
     rows += (
-        '<div style="margin-top:8px;border-top:1px solid #334155;padding-top:6px;">'
+        f'<div style="margin-top:8px;border-top:1px solid {divider_color};padding-top:6px;">'
         '<div style="display:flex;align-items:center;gap:8px;margin:2px 0;">'
         '<span style="display:inline-block;width:18px;height:3px;background:#ef4444;border-top:2px dashed #ef4444;"></span>'
         '<span style="font-size:0.82rem;color:#ef4444;font-weight:bold;">Blocked Road (⛔)</span></div>'
